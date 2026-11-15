@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+*.pem
+credentials*.json
+token*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+
+# JS tooling (not used, kept for safety)
+node_modules/
+.wrangler/
+
+# Run artefacts
+*.log
+output/
+
+# Your own documents: never commit real scans or PDFs.
+# Put them in output/ or outside the repo.

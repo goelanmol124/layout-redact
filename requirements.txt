@@ -1,0 +1,8 @@
+numpy>=1.22
+opencv-python>=4.6
+Pillow>=10.1
+PyYAML>=6.0
+# Optional: PDF input (rasterisation). PDF output works without it.
+pypdfium2>=4.0
+# Tests
+pytest>=7.0

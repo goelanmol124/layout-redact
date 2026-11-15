@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layout-redact"
+version = "0.1.0"
+description = "Offline, template-based redaction of fixed-layout forms: line-skeleton detection, RANSAC homography and projection of redaction boxes (OpenCV, no OCR, no ML, no cloud)."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Anmol Goel" }]
+keywords = [
+    "document-redaction", "pii-redaction", "redaction", "offline", "privacy",
+    "homography", "ransac", "opencv", "template-matching", "form-layout",
+    "document-image-analysis", "scanned-documents",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Security",
+]
+dependencies = [
+    "numpy>=1.22",
+    "opencv-python>=4.6",
+    "Pillow>=10.1",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+pdf = ["pypdfium2>=4.0"]
+dev = ["pytest>=7.0", "pypdfium2>=4.0"]
+
+[project.scripts]
+layout-redact = "layout_redact.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
